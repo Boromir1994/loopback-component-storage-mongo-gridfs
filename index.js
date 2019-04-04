@@ -24,7 +24,7 @@ exports.initialize = function(dataSource, callback) {
 
   connector.define = function(model, properties, settings) {};
 
-  settings.lazyConnectTimeout =  settings.lazyConnectTimeou || 30000;
+  settings.lazyConnectTimeout =  settings.lazyConnectTimeout || 30000;
 
   if (callback) {
     setTimeout( () => {
