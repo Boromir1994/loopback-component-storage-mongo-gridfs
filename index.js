@@ -24,10 +24,12 @@ exports.initialize = function(dataSource, callback) {
 
   connector.define = function(model, properties, settings) {};
 
+  settings.lazyConnectTimeout =  settings.lazyConnectTimeou || 30000;
+
   if (callback) {
     setTimeout( () => {
       dataSource.connector.connect(callback);
-    }, 30000);
+    }, settings.lazyConnectTimeout);
     
   }
 };
