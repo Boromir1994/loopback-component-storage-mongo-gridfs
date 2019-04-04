@@ -25,6 +25,9 @@ exports.initialize = function(dataSource, callback) {
   connector.define = function(model, properties, settings) {};
 
   if (callback) {
-    dataSource.connector.connect(callback);
+    setTimeout( () => {
+      dataSource.connector.connect(callback);
+    }, 20000);
+    
   }
 };
