@@ -26,7 +26,7 @@ exports.initialize = function(dataSource, callback) {
 
   settings.lazyConnectTimeout =  settings.lazyConnectTimeout || 30000;
 
-  if (callback) {
+  if (callback && process.env.NODE_ENV !== "testing") {
     setTimeout( () => {
       dataSource.connector.connect(callback);
     }, settings.lazyConnectTimeout);
